@@ -26,7 +26,7 @@ sd_OreStudio <- round( sd(prova$Ore_studio), 2 )
 # In media, quanti spritz si bevono nel bar C? RISULTATO UTILE PER LA CASSAFORTE! (ARROTONDATO ALLA SECONDA CIFRA DECIMALE)
 
 mean_spritzC <- round( mean( prova[prova$Bar == 'C',]$Spritz ), 2 ) 
-#aggregate(prova, 2, list(prova[,1]), mean)
+#aggregate(prova[,2], list(prova[,1]), mean)
 #tapply(prova$Spritz, prova$Bar, mean)
 
 
@@ -38,8 +38,7 @@ mean_spritzC <- round( mean( prova[prova$Bar == 'C',]$Spritz ), 2 )
 
 # In quale corso si bevono più spritz in media? LA MEDIA MAGGIORE SARà RISULTATO UTILE PER LA CASSAFORTE! (ARROTONDATO ALLA SECONDA CIFRA DECIMALE)
 
-corso <- c( rep('psicologia', 13), rep('ingegneria', 13), rep('biologia', 13), rep('statistica', 19) )
-prova$corso <- corso
+prova$corso <- c( rep('psicologia', 13), rep('ingegneria', 13), rep('biologia', 13), rep('statistica', 19) )
 
 round( tapply(prova$Spritz, prova$corso, mean), 2)
 #mean_psi <- round( mean( prova[prova$corso == 'psicologia',]$Spritz ), 2 )
