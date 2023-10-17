@@ -1,4 +1,6 @@
-# Disegni-di-ricerca
+# COPIATE PICCOLI COGNITIVI
+
+## Disegni-di-ricerca
  
-## Esercizi
+### Esercizi
 Contiene tutti gli esercizi caricati nel moodle dal professore risolti e parzialmente commentati da me
