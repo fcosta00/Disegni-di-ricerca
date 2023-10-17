@@ -9,7 +9,7 @@ prova <- read_delim("Dataset/prova.csv", delim = ";", escape_double = FALSE, tri
 
 # 1. Quante righe e quante colonne ci sono in prova? Trovare la funzione specifica per questa domanda.
 
-NCOL(prova)
+NCOL(prova) # dim(prova)
 NROW(prova)
 
 
@@ -22,9 +22,13 @@ str(prova)
 
 sd_OreStudio <- round( sd(prova$Ore_studio), 2 )
 
+
 # In media, quanti spritz si bevono nel bar C? RISULTATO UTILE PER LA CASSAFORTE! (ARROTONDATO ALLA SECONDA CIFRA DECIMALE)
 
-mean_spritzC <- round( mean( prova[prova$Bar == 'C',]$Spritz ), 2 )
+mean_spritzC <- round( mean( prova[prova$Bar == 'C',]$Spritz ), 2 ) 
+#aggregate(prova, 2, list(prova[,1]), mean)
+#tapply(prova$Spritz, prova$Bar, mean)
+
 
 # Creare una variabile "corso" che contenga il  corso di studio.
 # Nelle prime 13 righe inserire "psicologia",
@@ -37,9 +41,10 @@ mean_spritzC <- round( mean( prova[prova$Bar == 'C',]$Spritz ), 2 )
 corso <- c( rep('psicologia', 13), rep('ingegneria', 13), rep('biologia', 13), rep('statistica', 19) )
 prova$corso <- corso
 
-mean_psi <- round( mean( prova[prova$corso == 'psicologia',]$Spritz ), 2 )
-mean_ing <- round( mean( prova[prova$corso == 'ingegneria',]$Spritz ), 2 )
-mean_bio <- round( mean( prova[prova$corso == 'biologia',]$Spritz ), 2 )
-mean_sta <- round( mean( prova[prova$corso == 'statistica',]$Spritz ), 2 )
+round( tapply(prova$Spritz, prova$corso, mean), 2)
+#mean_psi <- round( mean( prova[prova$corso == 'psicologia',]$Spritz ), 2 )
+#mean_ing <- round( mean( prova[prova$corso == 'ingegneria',]$Spritz ), 2 )
+#mean_bio <- round( mean( prova[prova$corso == 'biologia',]$Spritz ), 2 )
+#mean_sta <- round( mean( prova[prova$corso == 'statistica',]$Spritz ), 2 )
 
 ## USARE IL PUNTO PER I DECIMALI
