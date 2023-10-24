@@ -4,7 +4,7 @@
 ### Per svolgere i seguenti esercizi, si faccia affidamento al database "Ottobre.csv".
 
 setwd("C:/Users/franc/OneDrive - Università degli Studi di Padova/Università-PC-senzaMilza/Magistrale/Disegni di ricerca/Esercizi")
-ottobre <- read_delim("Dataset/Ottobre.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+ottobre <- read.csv("Dataset/Ottobre.csv", sep=";")
 
 
 ## Esercizio 0
@@ -22,5 +22,5 @@ table( ottobre$Category )
 # - se il valore della cella nella prima colonna è maggiore di 42, il corrispondente valore della cella della nuova colonna dovrà essere 2.
 # Una volta creata la colonna, si sommino tutti i sui valori all interno e si inserisca nella cassaforte la radice quadrata ti tale valore, arrotondato al secondo decimale.
 
-ottobre$controllo <- (ottobre$Age > 42) +1
+ottobre$controllo <- (ottobre$Age > 42) + 1
 round( sqrt( sum(ottobre$contrllo) ), 2 )
