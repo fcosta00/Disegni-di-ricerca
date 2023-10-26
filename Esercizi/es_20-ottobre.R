@@ -4,7 +4,8 @@
 ### Per svolgere i seguenti esercizi, si faccia affidamento al database "Ottobre.csv".
 
 setwd("C:/Users/franc/OneDrive - Università degli Studi di Padova/Università-PC-senzaMilza/Magistrale/Disegni di ricerca/Esercizi")
-ottobre <- read.csv("Dataset/Ottobre.csv", sep=";")
+ottobre <- read.csv("Dataset/Ottobre.csv", sep=";") 
+#ottobre <- read.csv( file.choose(), sep=";")
 
 
 ## Esercizio 0
