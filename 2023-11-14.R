@@ -19,8 +19,14 @@ summary( mod_cat )
 library(easystats) 
 report(mod_cat)
 
-mean( datax[ datax$Treat == 'Cont', ]$Prewt)
+mean( datax[ datax$Treat == 'CBT', ]$Prewt)
 
 mod_cat
 
+with( datax, tapply(Prewt, Treat, mean) )
+
+library(effects)
+plot( effect('Treat', mod_cat) )
+
+plot(mod_cat)
 
